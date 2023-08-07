@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import back from "../assets/falk.gif";
 
 const COUNTRY = gql`
   query Country($code: ID!) {
@@ -37,11 +38,42 @@ export default function Home() {
 
   return (
     <main>
-      <ul>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "auto auto auto auto auto auto ",
+          gap: 50,
+          padding: 30,
+          backgroundImage:
+            "url(" +
+            "https://i.pinimg.com/originals/6d/78/27/6d782724aa2571a4a8cf4bfb6b95b363.gif" +
+            ")",
+        }}
+      >
         {data.countries.map((country: any) => (
-          <li>{country.name}</li>
+          <div
+            style={{
+              border: "3px solid black",
+              width: 250,
+              height: 250,
+            }}
+          >
+            <div
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <div style={{ fontSize: 100 }}>{country.emoji}</div>
+              <div style={{ fontWeight: "bold", fontSize: 20 }}>
+                {country.name}
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </main>
   );
 }
