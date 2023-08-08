@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import back from "../assets/falk.gif";
+import Link from "next/link";
 
 const COUNTRY = gql`
   query Country($code: ID!) {
@@ -51,12 +51,13 @@ export default function Home() {
         }}
       >
         {data.countries.map((country: any) => (
-          <div
+          <Link
             style={{
               border: "3px solid black",
               width: 250,
               height: 250,
             }}
+            href={country.code}
           >
             <div
               style={{
@@ -71,7 +72,7 @@ export default function Home() {
                 {country.name}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>
