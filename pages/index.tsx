@@ -53,9 +53,10 @@ export default function Home() {
         {data.countries.map((country: any) => (
           <Link
             style={{
-              border: "3px solid black",
+              border: "3px solid pink",
               width: 250,
               height: 250,
+              borderRadius: 30,
             }}
             href={country.code}
           >

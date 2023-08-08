@@ -44,6 +44,7 @@ export default function Country() {
             "url(" +
             "https://i.pinimg.com/originals/6d/78/27/6d782724aa2571a4a8cf4bfb6b95b363.gif" +
             ")",
+          color: "#FAA0A0",
         }}
       >
         <div style={{ fontSize: 300 }}>{data.country.emoji}</div>
